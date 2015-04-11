@@ -13,8 +13,7 @@ public class InputHandler : MonoBehaviour {
 	public float moveX;
 	public float moveY;
 	public float deadzone = .25f;
-
-
+	
 	// Use this for initialization
 	void Start () {
 
@@ -26,9 +25,8 @@ public class InputHandler : MonoBehaviour {
 		GetControllerValues();
 
 		//testing shit
-		Debug.Log(moveX);
+		Debug.Log(moveY);
 	}
-
 
 	// Gets the controller values and saves them into values so we can use them
 	// also deadzone checking
