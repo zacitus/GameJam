@@ -12,7 +12,7 @@ public class InputHandler : MonoBehaviour {
 	// this is the thing for the controller variables
 	public float moveX;
 	public float moveY;
-	public float deadzone = .25f;
+	public float deadzone = .15f;
 	
 	// Use this for initialization
 	void Start () {
@@ -43,7 +43,7 @@ public class InputHandler : MonoBehaviour {
 			moveX = 0;
 		}
 
-		else if (moveX < 0 && moveX > -deadzone)
+		if (moveX < 0 && moveX > -deadzone)
 		{
 			moveX = 0;
 		}
@@ -53,7 +53,7 @@ public class InputHandler : MonoBehaviour {
 			moveY = 0;
 		}
 		
-		else if (moveX < 0 && moveY > -deadzone)
+		if (moveX < 0 && moveY > -deadzone)
 		{
 			moveY = 0;
 		}
