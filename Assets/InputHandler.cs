@@ -53,7 +53,7 @@ public class InputHandler : MonoBehaviour {
 			moveY = 0;
 		}
 		
-		if (moveX < 0 && moveY > -deadzone)
+		if (moveY < 0 && moveY > -deadzone)
 		{
 			moveY = 0;
 		}
