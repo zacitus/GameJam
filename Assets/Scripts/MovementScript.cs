@@ -9,6 +9,9 @@ public class MovementScript : MonoBehaviour {
 	private float leftRightMovementInput = 0.0f;
 	private float speed = 10.0f;
 
+	// Import InputHandler.cs so we have deadzone accounted for
+	public GetInput getinput;
+
 	//private float screenY = 0.0f;
 	//private float screenX = 0.0f;
 	//private float movementLimitX = 8.0f;
@@ -35,8 +38,8 @@ public class MovementScript : MonoBehaviour {
 
 		//stores input by predefined axis into -1 to 1 * speed
 		if(playerOneObject){
-			leftRightMovementInput = Input.GetAxis ("Horizontal") * speed * Time.deltaTime;
-			upDownMovementInput = Input.GetAxis ("Vertical") * speed * Time.deltaTime;
+			leftRightMovementInput = getinput.moveX * speed * Time.deltaTime;
+			upDownMovementInput = getinput.moveY * speed * Time.deltaTime;
 
 			playerOneObject.transform.Translate (leftRightMovementInput, upDownMovementInput, 0);
 		}

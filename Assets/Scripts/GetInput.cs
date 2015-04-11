@@ -1,43 +1,32 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class InputHandler : MonoBehaviour {
+public class GetInput : MonoBehaviour {
 
-	// these are the keys that we will reference for the pc yeah man
+	// Keycode Constants
 	public static KeyCode moveUpKey  	= KeyCode.W;
 	public static KeyCode moveLeftKey  	= KeyCode.A;
 	public static KeyCode moveDownKey 	= KeyCode.S;
 	public static KeyCode moveRightKey  = KeyCode.D;
 
-	// this is the thing for the controller variables
+	// Controller variables
 	public float moveX;
 	public float moveY;
-	public float deadzone = .15f;
-	
-	// Use this for initialization
-	void Start () {
-
-	}
+	public float deadzone = .15f; // Deadzone is for joysticks that aren't perfect
 	
 	// Update is called once per frame
 	void Update () 
 	{
 		GetControllerValues();
-
-		//testing shit
-		Debug.Log(moveY);
 	}
 
-	// Gets the controller values and saves them into values so we can use them
-	// also deadzone checking
+	// Get the controller values
 	void GetControllerValues () 
 	{
 		moveX = Input.GetAxis("Horizontal");
 		moveY = Input.GetAxis("Vertical");
 
-		// deadzone checking
-		// this makes sure the controller value is deadzone compliant
-		// just sets it to zero if it falls in the deadzone
+		// Sets movement to 0 if the controller value is inside the deadzone
 		if (moveX > 0 && moveX < deadzone)
 		{
 			moveX = 0;
