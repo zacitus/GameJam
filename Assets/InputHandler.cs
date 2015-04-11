@@ -1,13 +1,13 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class InputHandler : MonoBehaviour
-{
+public class InputHandler : MonoBehaviour {
+
 	// these are the keys that we will reference for the pc yeah man
-	public static KeyCode moveUpKey		= KeyCode.W;
-	public static KeyCode moveLeftKey	= KeyCode.A;
-	public static KeyCode moveDownKey	= KeyCode.S;
-	public static KeyCode moveRightKey	= KeyCode.D;
+	public static KeyCode moveUpKey  	= KeyCode.W;
+	public static KeyCode moveLeftKey  	= KeyCode.A;
+	public static KeyCode moveDownKey 	= KeyCode.S;
+	public static KeyCode moveRightKey  = KeyCode.D;
 
 	// this is the thing for the controller variables
 	public float moveX;
@@ -53,7 +53,7 @@ public class InputHandler : MonoBehaviour
 			moveY = 0;
 		}
 		
-		if (moveY < 0 && moveY > -deadzone)
+		if (moveX < 0 && moveY > -deadzone)
 		{
 			moveY = 0;
 		}
