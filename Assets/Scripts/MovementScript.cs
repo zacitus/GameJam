@@ -4,14 +4,13 @@ using System.Collections;
 public class MovementScript : MonoBehaviour {
 
 	public GameObject playerOneObject;
-	public GameObject playerTwoObject;
 	//private Rigidbody playerBody;
 	private float upDownMovementInput = 0.0f;
 	private float leftRightMovementInput = 0.0f;
 	private float speed = 10.0f;
 
 	// Import InputHandler.cs so we have deadzone accounted for
-	public GetInput getInput;
+	public GetInput getinput;
 
 	//private float screenY = 0.0f;
 	//private float screenX = 0.0f;
@@ -39,16 +38,11 @@ public class MovementScript : MonoBehaviour {
 
 		//stores input by predefined axis into -1 to 1 * speed
 		if(playerOneObject){
-			leftRightMovementInput = getInput.moveX * speed * Time.deltaTime;
-			upDownMovementInput = getInput.moveY * speed * Time.deltaTime;
+			leftRightMovementInput = getinput.moveX * speed * Time.deltaTime;
+			upDownMovementInput = getinput.moveY * speed * Time.deltaTime;
 
 			playerOneObject.transform.Translate (leftRightMovementInput, upDownMovementInput, 0);
 		}
-
-		Vector3 direction = playerOneObject.transform.position - playerTwoObject.transform.position;
-		float angle = Mathf.Atan2(direction.y,direction.x) * Mathf.Rad2Deg;
-		
-		playerOneObject.transform.rotation = Quaternion.Euler(0, 0, angle - 270);
 
 		//if the player object is within the bounds the player can move, else the player is only allowed to move the one direction dictated by using positive or negative Mathf.Abs
 		/*
