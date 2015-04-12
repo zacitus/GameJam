@@ -38,8 +38,8 @@ public class MovementScript : MonoBehaviour {
 
 		//stores input by predefined axis into -1 to 1 * speed
 		if(playerOneObject){
-			leftRightMovementInput = getinput.moveX * speed * Time.deltaTime;
-			upDownMovementInput = getinput.moveY * speed * Time.deltaTime;
+			leftRightMovementInput = getinput.p1_leftStickX * speed * Time.deltaTime;
+			upDownMovementInput = getinput.p1_leftStickY * speed * Time.deltaTime;
 
 			playerOneObject.transform.Translate (leftRightMovementInput, upDownMovementInput, 0);
 		}
