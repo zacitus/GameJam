@@ -10,8 +10,8 @@ public class GetInput : MonoBehaviour {
 	public float p1_rightStickX;
 	public float p1_rightStickY;
 
-	public float p1_leftTrigger;
-	public float p1_rightTrigger;
+	public float p1_leftTrigger = -1;
+	public float p1_rightTrigger = -1;
 
 	public bool p1_leftBumper;
 	public bool p1_rightBumper;
