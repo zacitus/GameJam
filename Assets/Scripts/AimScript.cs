@@ -8,8 +8,6 @@ public class AimScript : MonoBehaviour {
 	private float leftRightAimInput = 0.0f;
 	private float speed = 10.0f;
 
-	public GetInput getinput;
-
 	// Use this for initialization
 	void Start () {
 	
@@ -19,8 +17,8 @@ public class AimScript : MonoBehaviour {
 	void FixedUpdate () {
 		//stores input by predefined axis into -1 to 1 * speed
 		if(playerTwoObject){
-			leftRightAimInput = getinput.p1_rightStickX * speed * Time.deltaTime;
-			upDownAimInput = getinput.p1_rightStickY * speed * Time.deltaTime;
+			leftRightAimInput = Input.GetAxis ("Horizontal2") * speed * Time.deltaTime;
+			upDownAimInput = Input.GetAxis ("Vertical2") * speed * Time.deltaTime;
 			
 			playerTwoObject.transform.Translate (leftRightAimInput, upDownAimInput, 0);
 		}
